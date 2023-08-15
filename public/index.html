@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mewzeek</title>
+    <script src="https://kit.fontawesome.com/17196957cf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-zinc-900 text-white ">
+    <nav class="fixed bg-gradient-to-t from-black to-transparent from-20% bottom-0 w-full flex flex-row justify-between lg:text-zinc-300 py-3 px-6 md:px-16 font-semibold">
+        <div class="flex flex-col items-center hover:text-white duration-200 cursor-pointer">
+          <i class="fa-solid fa-house text-xl"></i>
+          <h1>Home</h1>
+        </div>
+        <div class="flex flex-col items-center hover:text-white duration-200 cursor-pointer" id="search-btn">
+          <i class="fa-solid fa-magnifying-glass text-xl"></i>
+          <h1>Search</h1>
+        </div>
+        <div class="flex flex-col items-center hover:text-white duration-200 cursor-pointer">
+          <i class="fa-solid fa-layer-group text-xl"></i>  
+          <h1>Library</h1>
+        </div>
+        <div class="flex flex-col items-center hover:text-white duration-200 cursor-pointer" id="profile-btn">
+          <i class="fa-solid fa-user text-xl"></i>  
+          <h1>Profile</h1>
+        </div>
+    </nav>
+    <header class="flex items-center justify-between bg-gradient-to-b from-black to-transparent from-20% ">
+      <h1 id="time" class="font-bold text-2xl md:text-5xl  py-2 px-2"></h1>
+      <div class="flex justify-betweeen items-center justify-between mt-2">
+        <i class="fa-regular fa-bell  cursor-pointer mr-4 lg:text-5xl lg:mr-16 md:mr-12 md:text-3xl"></i>
+        <i class="fa-solid fa-clock-rotate-left  mr-4 cursor-pointer lg:text-5xl lg:mr-16 md:mr-12 md:text-3xl"></i>
+        <i class="fa-solid fa-gears cursor-pointer  mr-4 lg:text-5xl md:mr-12 md:text-3xl"></i>
+      </div>
+    </header>
+    <div class="hidden animate-fadeRight w-full" id="search-box">
+      <div class="flex align-center justify-center ">
+        <form class="border-solid border-white border rounded mt-4 flex flex-row items-center bg-white text-black font-bold">
+          <i class="fa-solid fa-magnifying-glass pl-2.5"></i>
+          <input type="text" name="" placeholder="Search for Music" class="border-none outline-none shadow-none w-full py-2 px-2.5">
+        </form>
+      </div>
+    </div>
+    <div class="bg-black w-screen h-screen z-10 fixed left-0 top-0 hidden animate-fadeRight" id="profile">
+      <div class="flex justify-between items-center border-b border-white py-2 px-4 md:text-3xl">
+        <h2 class="font-semibold text-center">User Profile</h2> 
+        <h1 class="text-3xl md:text-6xl cursor-pointer" id="close-btn">&times;</h1>
+      </div> 
+      <div class="flex flex-col justify-between px-4 md:text-3xl">
+        <a href="#" class="my-2 md:my-4">Suscribe to Premium</a>
+        <a href="#" class="my-2 md:my-4">Playlists</a>
+        <a href="#" class="my-2 md:my-4">Log out<i class="fa-solid fa-right-from-bracket text-white ml-3"></i></a>
+      </div>
+    </div>
+    <div class="mx-3 my-6 cursor-pointer ">
+      <h1 class="font-bold mb-2">New Releases</h1>
+      <div class="flex flex-row overflow-x-scroll overflow-y-hidden">
+        <div class="rounded-md bg-gradient-to-r from-zinc-50 to-gray-400 shadow-black flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+          <img src="/images/unruly.webp" alt="unruly" class="h-24 w-24 rounded-md">
+        <h1 class="font-semibold text-center ml-4">Listen to "Unruly" now by Olamide</h1>
+        </div>
+        <div class="rounded-md bg-gradient-to-r from-zinc-50 to-red-500 flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+          <img src="/images/workofart.avif" alt="workofart" class="rounded-md h-24 w-24">
+        <h1 class="font-semibold text-center ml-4">Listen to "Work Of Art" now by Asake</h1>
+        </div>
+        <div class="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+          <img src="/images/Screenshot (19).png" alt="RCWK" class="rounded-md h-24 w-24">
+        <h1 class="font-semibold text-center ml-4">Listen to "Reality Check With Karen" podcast now by Karen</h1>
+        </div>
+        <div class="rounded-md bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+          <img src="/images/drinkwater.jpeg" alt="Drink Water" class="h-24 w-24 rounded-md">
+        <h1 class="font-semibold text-center ml-4">Listen to "Drink Water" now by John Baptiste, Jon Bellion, Fireboy DML</h1>
+        </div>
+        <div class="rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+          <img src="/images/tequila.jpg" alt="Tequila Ever After" class="h-24 w-24 rounded-md">
+        <h1 class="font-semibold text-center ml-4">Listen to "Tequila Ever After" now by AG Baby</h1>
+        </div>
+        <div class="rounded-md bg-gradient-to-r from-zinc-700 to-black flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+          <img src="/images/d-day.png" alt="d-day" class="h-24 w-24 rounded-md">
+        <h1 class="font-semibold text-center ml-4">Listen to "D-Day" now by Agust D</h1>
+        </div>
+        <div class="rounded-md bg-gradient-to-r from-cyan-700 to-blue-500 flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+          <img src="/images/split.png" alt="Split Decision" class="h-24 w-24 rounded-md">
+        <h1 class="font-semibold text-center ml-4">Listen to "Split Decisions" now by Dave and Central Cee</h1>
+        </div>
+        <div class="rounded-md bg-gradient-to-r from-cyan-500 to-pink-500 flex p-5 items-center mb-3 shrink-0 w-72 mt-3 hover:scale-105 duration-500">
+          <img src="/images/lana.png" alt="Did You Know That There's a Tunnel Under Ocean Blvd" class="h-24 w-24 rounded-md">
+        <h1 class="font-semibold text-center ml-4">Listen to "Did You Know That There's a Tunnel Under Ocean Blvd" now by Lana Del Rey</h1>
+        </div>
+      </div>
+    </div>
+    <script src="/src/js/app.js"></script>
+</body>
+</html>
