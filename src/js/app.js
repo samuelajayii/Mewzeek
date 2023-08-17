@@ -16,8 +16,12 @@ setInterval(timeFunction, 1000)
 
 const searchBox = document.getElementById('search-box')
 const searchBtn = document.getElementById('search-btn')
+const closeSearchBtn = document.getElementById('close-search-btn')
 searchBtn.addEventListener('click', () => {
     searchBox.classList.toggle('hidden')
+    closeSearchBtn.addEventListener('click', () => {
+        searchBox.classList.add('hidden')
+    })
 })
 const profile = document.getElementById('profile')
 const profileBtn = document.getElementById('profile-btn')
@@ -27,4 +31,17 @@ profileBtn.addEventListener('click', () => {
     closeBtn.addEventListener('click', () => {
         profile.style.display = "none"
     })
+})
+
+const revealBtn = document.getElementById('reveal-btn')
+const charts = document.getElementById('charts')
+
+revealBtn.addEventListener('click', () => {
+    if(charts.style.overflow = 'hidden'){
+        charts.style.height = 'fit-content'
+    } else charts.style.height = '20rem'
+})
+const unrevealBtn = document.getElementById('unreveal-btn')
+unrevealBtn.addEventListener('click', () => {
+    charts.style.height = '20rem';
 })

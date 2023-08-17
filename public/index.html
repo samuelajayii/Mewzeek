@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +7,31 @@
     <script src="https://kit.fontawesome.com/17196957cf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./output.css">
 </head>
-<body class="bg-zinc-900 text-white ">
-    <nav class="fixed bg-gradient-to-t from-black to-transparent from-20% bottom-0 w-full flex flex-row justify-between lg:text-zinc-300 py-3 px-6 md:px-16 font-semibold">
+<body class="bg-white text-black dark:bg-black dark:text-white" id="home">
+    <nav class="fixed bg-gradient-to-t from-black to-transparent from-20% bottom-0 w-full flex text-white flex-row justify-between lg:text-zinc-300 py-3 px-6 md:px-16 font-semibold z-10">
         <div class="flex flex-col items-center hover:text-white duration-200 cursor-pointer">
-          <i class="fa-solid fa-house text-xl"></i>
-          <h1>Home</h1>
+          <a href="#home"><i class="fa-solid fa-house text-xl"></i></a>
+          <a href="#home">Home</a>
         </div>
         <div class="flex flex-col items-center hover:text-white duration-200 cursor-pointer" id="search-btn">
           <i class="fa-solid fa-magnifying-glass text-xl"></i>
           <h1>Search</h1>
         </div>
         <div class="flex flex-col items-center hover:text-white duration-200 cursor-pointer">
-          <i class="fa-solid fa-layer-group text-xl"></i>  
-          <h1>Library</h1>
+          <a href="/public/index2.html" target="_blank">
+            <i class="fa-solid fa-layer-group text-xl"></i> 
+          </a>
+          
+          <a href="/public/index2.html" target="_blank">
+            <h1>Library</h1>
+          </a> 
         </div>
         <div class="flex flex-col items-center hover:text-white duration-200 cursor-pointer" id="profile-btn">
           <i class="fa-solid fa-user text-xl"></i>  
           <h1>Profile</h1>
         </div>
     </nav>
-    <header class="flex items-center justify-between bg-gradient-to-b from-black to-transparent from-20% ">
+    <header class="flex items-center justify-between bg-gradient-to-b py-3">
       <h1 id="time" class="font-bold text-2xl md:text-5xl  py-2 px-2"></h1>
       <div class="flex justify-betweeen items-center justify-between mt-2">
         <i class="fa-regular fa-bell  cursor-pointer mr-4 lg:text-5xl lg:mr-16 md:mr-12 md:text-3xl"></i>
@@ -34,16 +39,17 @@
         <i class="fa-solid fa-gears cursor-pointer  mr-4 lg:text-5xl md:mr-12 md:text-3xl"></i>
       </div>
     </header>
-    <div class="hidden animate-fadeRight w-full" id="search-box">
-      <div class="flex align-center justify-center ">
-        <form class="border-solid border-white border rounded mt-4 flex flex-row items-center bg-white text-black font-bold">
+    <div class="hidden w-screen h-screen bg-black fixed top-0 z-10" id="search-box">
+      <div class="flex align-center justify-center mt-10"> 
+        <form class="border-solid border-white border rounded flex flex-row items-center bg-white text-black font-bold animate-bounce w-11/12">
           <i class="fa-solid fa-magnifying-glass pl-2.5"></i>
-          <input type="text" name="" placeholder="Search for Music" class="border-none outline-none shadow-none w-full py-2 px-2.5">
+          <input type="text" name="" placeholder=" Search for music or podcasts" class="border-none outline-none shadow-none w-5/6 py-2 px-2.5">
+          <h1 class="text-3xl cursor-pointer mb-1" id="close-search-btn">&times;</h1>
         </form>
       </div>
     </div>
-    <div class="bg-black w-screen h-screen z-10 fixed left-0 top-0 hidden animate-fadeRight" id="profile">
-      <div class="flex justify-between items-center border-b border-white py-2 px-4 md:text-3xl">
+    <div class="bg-white text-black dark:bg-black dark:text-white w-screen h-screen z-10 fixed left-0 top-0 hidden animate-fadeRight" id="profile">
+      <div class="flex justify-between items-center border-b border-black dark:border-white py-2 px-4 md:text-3xl">
         <h2 class="font-semibold text-center">User Profile</h2> 
         <h1 class="text-3xl md:text-6xl cursor-pointer" id="close-btn">&times;</h1>
       </div> 
@@ -53,40 +59,181 @@
         <a href="#" class="my-2 md:my-4">Log out<i class="fa-solid fa-right-from-bracket text-white ml-3"></i></a>
       </div>
     </div>
-    <div class="mx-3 my-6 cursor-pointer ">
+    <div class="flex lg:flex-row flex-col items-center m-10 bg-cover cursor-pointer bg-gradient-to-bl from-transparent to-gray-500 w-fit p-8 justify-center rounded-xl hover:scale-105 duration-500">
+      <img src="/images/seven.jpg" alt="Seven" class="object-cover md:h-80 rounded-md md:rounded-xl">
+      <div class="font-semibold md:pl-10 mt-2 md:mt-4 text-center">
+        <h1 class="font-semibold md:text-4xl">Listen to the current number 1 song in the world </h1>
+        <h1 class="text-zinc-100 md:text-4xl md:mt-4">SEVEN ft. Latto</h1>
+      </div>
+    </div>
+    <div class="mx-3 my-6 text-white dark:text-black">
       <h1 class="font-bold mb-2">New Releases</h1>
-      <div class="flex flex-row overflow-x-scroll overflow-y-hidden">
-        <div class="rounded-md bg-gradient-to-r from-zinc-50 to-gray-400 shadow-black flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+      <div class="flex flex-row overflow-x-scroll overflow-y-hidden" id="scroll">
+        <div class="rounded-md bg-gradient-to-r from-zinc-50 to-gray-400 shadow-black flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500 cursor-pointer">
           <img src="/images/unruly.webp" alt="unruly" class="h-24 w-24 rounded-md">
         <h1 class="font-semibold text-center ml-4">Listen to "Unruly" now by Olamide</h1>
         </div>
-        <div class="rounded-md bg-gradient-to-r from-zinc-50 to-red-500 flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+        <div class="rounded-md bg-gradient-to-r from-zinc-50 to-red-500 flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500 cursor-pointer">
           <img src="/images/workofart.avif" alt="workofart" class="rounded-md h-24 w-24">
         <h1 class="font-semibold text-center ml-4">Listen to "Work Of Art" now by Asake</h1>
         </div>
-        <div class="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
-          <img src="/images/Screenshot (19).png" alt="RCWK" class="rounded-md h-24 w-24">
+        <div class="rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500 cursor-pointer">
+          <img src="/images/karen.png" alt="RCWK" class="rounded-md h-24 w-24">
         <h1 class="font-semibold text-center ml-4">Listen to "Reality Check With Karen" podcast now by Karen</h1>
         </div>
-        <div class="rounded-md bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+        <div class="rounded-md bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500 cursor-pointer">
           <img src="/images/drinkwater.jpeg" alt="Drink Water" class="h-24 w-24 rounded-md">
         <h1 class="font-semibold text-center ml-4">Listen to "Drink Water" now by John Baptiste, Jon Bellion, Fireboy DML</h1>
         </div>
-        <div class="rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+        <div class="rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500 cursor-pointer">
           <img src="/images/tequila.jpg" alt="Tequila Ever After" class="h-24 w-24 rounded-md">
         <h1 class="font-semibold text-center ml-4">Listen to "Tequila Ever After" now by AG Baby</h1>
         </div>
-        <div class="rounded-md bg-gradient-to-r from-zinc-700 to-black flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+        <div class="rounded-md bg-gradient-to-r from-zinc-700 to-black flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500 cursor-pointer dark:text-white">
           <img src="/images/d-day.png" alt="d-day" class="h-24 w-24 rounded-md">
         <h1 class="font-semibold text-center ml-4">Listen to "D-Day" now by Agust D</h1>
         </div>
-        <div class="rounded-md bg-gradient-to-r from-cyan-700 to-blue-500 flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500">
+        <div class="rounded-md bg-gradient-to-r from-cyan-700 to-white flex p-5 items-center mb-3 shrink-0 mr-3 w-72 mt-3 hover:scale-105 duration-500 cursor-pointer">
           <img src="/images/split.png" alt="Split Decision" class="h-24 w-24 rounded-md">
-        <h1 class="font-semibold text-center ml-4">Listen to "Split Decisions" now by Dave and Central Cee</h1>
+        <h1 class="font-semibold text-center ml-4 text-black">Listen to "Split Decisions" now by Dave and Central Cee</h1>
         </div>
-        <div class="rounded-md bg-gradient-to-r from-cyan-500 to-pink-500 flex p-5 items-center mb-3 shrink-0 w-72 mt-3 hover:scale-105 duration-500">
+        <div class="rounded-md bg-gradient-to-r from-blue-500 to-pink-500 flex p-5 items-center mb-3 shrink-0 w-72 mt-3 hover:scale-105 duration-500 cursor-pointer">
           <img src="/images/lana.png" alt="Did You Know That There's a Tunnel Under Ocean Blvd" class="h-24 w-24 rounded-md">
         <h1 class="font-semibold text-center ml-4">Listen to "Did You Know That There's a Tunnel Under Ocean Blvd" now by Lana Del Rey</h1>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col justify-center mb-14">
+      <h1 class="font-semibold text-3xl text-center">
+        Playlists for you
+      </h1>
+      <div class="flex flex-row overflow-x-scroll overflow-y-hidden mx-3" id="scroll">
+        <div class="bg-[url('/images/silk-sonic.jfif')] w-72 h-40 bg-cover my-4 mr-3 shrink-0 hover:scale-105 duration-500 cursor-pointer">
+          <h1 class="font-semibold text-xl w-fit px-3 bg-slate-400">
+            Chill Mix
+          </h1>
+        </div>
+        <div class="bg-[url('/images/davido.png')] w-72 h-40 bg-cover my-4 mr-3 shrink-0 hover:scale-105 duration-500 cursor-pointer">
+          <h1 class="font-semibold text-xl  w-fit px-3 bg-slate-400">
+            Afrobeats
+          </h1>
+        </div>
+        <div class="bg-[url('/images/eminem.jpg')] w-72 h-40 bg-cover my-4 mr-3 shrink-0 hover:scale-105 duration-500 cursor-pointer">
+          <h1 class="font-semibold text-xl  w-fit px-3 bg-slate-400">
+            Rap
+          </h1>
+        </div>
+        <div class="bg-[url('/images/rema.jpg')] w-72 h-40 bg-cover my-4 mr-3 shrink-0 hover:scale-105 duration-500 cursor-pointer">
+          <h1 class="font-semibold text-xl  w-fit px-3 bg-slate-400">
+            Rema Mix
+          </h1>
+        </div>
+        <div class="bg-[url('/images/mayor.jpeg')] w-72 h-40 bg-cover bg-center my-4 mr-3 shrink-0 hover:scale-105 duration-500 cursor-pointer">
+          <h1 class="font-semibold text-xl  w-fit px-3 bg-slate-400">
+            Gbedu
+          </h1>
+        </div>
+        <div class="bg-[url('/images/bts.jpg')] w-72 h-40 bg-cover my-4 mr-3 shrink-0 hover:scale-105 duration-500 cursor-pointer">
+          <h1 class="font-semibold text-xl  w-fit px-3 bg-slate-400">
+            K-Pop
+          </h1>
+        </div>
+        <div class="bg-[url('/images/coldplay.jpg')] w-72 h-40 bg-cover my-4 mr-3 shrink-0 hover:scale-105 duration-500 cursor-pointer">
+          <h1 class="font-semibold text-xl  w-fit px-3 bg-slate-400">
+            2000s
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col w-full mb-10 px-3">
+      <h1 class="text-center font-semibold text-3xl mb-3">
+        Listen to a wide range of audio 
+      </h1>
+      <div class="grid-cols-[repeat(auto-fill,_minmax(18rem,_1fr))] grid gap-2 mb-5 h-80 overflow-hidden py-10" id="charts">
+        <div class="h-40 bg-gradient-to-tl from-yellow-500 to-pink-500 p-4 rounded-md cursor-pointer hover:scale-95 duration-500 active:scale-100">
+          <h1 class="text-2xl font-semibold">Podcasts</h1>
+        </div>
+        <div class="h-40 bg-gradient-to-tr from-cyan-500 to-blue-500 p-4 rounded-md cursor-pointer hover:scale-95 duration-500 active:scale-100">
+          <h1 class="text-2xl font-semibold">New Releases</h1>
+        </div>
+        <div class="h-40 bg-gradient-to-bl from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% p-4 rounded-md cursor-pointer hover:scale-95 duration-500 active:scale-100">
+          <h1 class="text-2xl font-semibold">Afro</h1>
+        </div>
+        <div class="h-40 bg-gradient-to-b from-blue-500 to-pink-500 p-4 rounded-md cursor-pointer hover:scale-95 duration-500 active:scale-100">
+          <h1 class="text-2xl font-semibold">Hip-Hop</h1>
+        </div>
+        <div class="h-40 bg-gradient-to-b from-zinc-50 to-gray-600 p-4 rounded-md cursor-pointer hover:scale-95 duration-500 active:scale-100">
+          <h1 class="text-2xl font-semibold">Live Events</h1>
+        </div>
+        <div class="h-40 bg-gradient-to-bl from-red-400 to-blue-500 p-4 rounded-md cursor-pointer hover:scale-95 duration-500 active:scale-100">
+          <h1 class="text-2xl font-semibold">Gospel</h1>
+        </div>
+        <div class="h-40 bg-gradient-to-tr from-green-500 to-white p-4 rounded-md cursor-pointer hover:scale-95 duration-500 active:scale-100">
+          <h1 class="text-2xl font-semibold">Radio</h1>
+        </div>
+        <div class="h-40 bg-gradient-to-b from-purple-500 to-pink-500 p-4 rounded-md cursor-pointer hover:scale-95 duration-500 active:scale-100">
+          <h1 class="text-2xl font-semibold">Trending</h1>
+        </div>
+        <div class="h-40 bg-gradient-to-r from-orange-500 to-white p-4 rounded-md cursor-pointer hover:scale-95 duration-500 active:scale-100">
+          <h1 class="text-2xl font-semibold">Workout</h1>
+        </div>
+        <div class="h-40 bg-gradient-to-r from-blue-500 to-white p-4 rounded-md cursor-pointer hover:scale-95 duration-500 active:scale-100">
+          <h1 class="text-2xl font-semibold">Anime</h1>
+        </div>
+        <div class="h-40 bg-gradient-to-tr from-cyan-700 to-white p-4 rounded-md cursor-pointer hover:scale-95 duration-500 active:scale-100">
+          <h1 class="text-2xl font-semibold">Made For You</h1>
+        </div>
+        <button id="unreveal-btn" class="p-2 bg-gradient-to-r from-green-400 to-blue-500 w-fit h-fit rounded-xl ">See Less</button>
+      </div>
+      <button id="reveal-btn" class="p-2 bg-gradient-to-r from-green-400 to-blue-500 w-fit h-fit rounded-xl ">See More</button>
+    </div>
+    <div class="flex flex-col items-center justify-center mb-20 mx-3">
+      <h1 class="text-center font-semibold text-3xl">My Favourites</h1>
+      <div class="flex flex-col items-center justify-between w-full">
+        <div class="flex flex-row justify-between items-center w-full border-b border-black dark:border-white py-5">
+          <div class="flex items-center flex-row w-60 text-center">
+            <img src="/images/face.png" alt="face" class="w-16 rounded">
+            <h1 class="md:ml-7 ml-2">Face</h1>
+          </div>
+          <i class="fa-solid fa-play text-2xl mr-5"></i>
+          <h1 class="mr-2">2:43</h1>
+          <i class="fa-solid fa-heart text-2xl"></i>
+        </div>
+        <div class="flex flex-row justify-between items-center w-full border-b border-black dark:border-white py-5">
+          <div class="flex items-center flex-row w-60 ">
+            <img src="/images/work.webp" alt="work of art" class="w-16 rounded">
+            <h1 class="md:ml-7 ml-2 w-fit text-left">Lonely At The Top</h1>
+          </div>
+          <i class="fa-solid fa-play text-2xl mr-5"></i>
+          <h1 class="mr-2">2:43</h1>
+          <i class="fa-solid fa-heart text-2xl"></i>
+        </div>
+        <div class="flex flex-row justify-between items-center w-full border-b border-black dark:border-white py-5">
+          <div class="flex items-center flex-row w-60 ">
+            <img src="/images/rnr.jpg" alt="Rave n Roses" class="w-16 rounded">
+            <h1 class="md:ml-7 ml-2 w-fit text-center">HOV</h1>
+          </div>
+          <i class="fa-solid fa-play text-2xl mr-5"></i>
+          <h1 class="mr-2">2:43</h1>
+          <i class="fa-solid fa-heart text-2xl"></i>
+        </div>
+        <div class="flex flex-row justify-between items-center w-full border-b border-black dark:border-white py-5">
+          <div class="flex items-center flex-row w-60 ">
+            <img src="/images/unruly.webp" alt="UNRULY" class="w-16 rounded">
+            <h1 class="md:ml-7 ml-2 w-fit text-center">Mukulu</h1>
+          </div>
+          <i class="fa-solid fa-play text-2xl mr-5"></i>
+          <h1 class="mr-2">2:43</h1>
+          <i class="fa-solid fa-heart text-2xl"></i>
+        </div>
+        <div class="flex flex-row justify-between items-center w-full border-b border-black dark:border-white py-5">
+          <div class="flex items-center flex-row w-60 ">
+            <img src="/images/evening.png" alt="Silk Sonic" class="w-16 rounded">
+            <h1 class="md:ml-7 ml-2 w-fit text-left">Smokin Out The Window</h1>
+          </div>
+          <i class="fa-solid fa-play text-2xl mr-5"></i>
+          <h1 class="mr-2">2:43</h1>
+          <i class="fa-solid fa-heart text-2xl"></i>
         </div>
       </div>
     </div>
