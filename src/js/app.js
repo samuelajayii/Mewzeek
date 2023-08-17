@@ -39,7 +39,7 @@ const charts = document.getElementById('charts')
 revealBtn.addEventListener('click', () => {
     if(charts.style.overflow = 'hidden'){
         charts.style.height = 'fit-content'
-    } else charts.style.height = '20rem'
+    }
 })
 const unrevealBtn = document.getElementById('unreveal-btn')
 unrevealBtn.addEventListener('click', () => {
