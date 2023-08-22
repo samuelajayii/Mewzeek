@@ -41,11 +41,13 @@ revealBtn.addEventListener('click', () => {
         charts.style.height = 'fit-content'
     }
     revealBtn.style.display = "none"
+    unrevealBtn.style.display = "block"
 })
 const unrevealBtn = document.getElementById('unreveal-btn')
 unrevealBtn.addEventListener('click', () => {
     charts.style.height = '20rem';
     revealBtn.style.display = "block"
+    unrevealBtn.style.display = "none"
 })
 
 let progress = document.getElementById('progress')
